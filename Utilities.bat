@@ -118,7 +118,8 @@ goto end
 
 :chromehistory
 echo Deleting Chrome history...
-rd /s /q "%LOCALAPPDATA%\Google\Chrome\User Data\Default\History"
+taskkill /F /IM chrome.exe >nul 2>&1
+del /q /f "%LOCALAPPDATA%\Google\Chrome\User Data\Default\History" >nul 2>&1
 echo Chrome history deleted successfully!
 goto end
 
