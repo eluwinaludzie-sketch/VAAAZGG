@@ -38,6 +38,8 @@ echo  %ESC%[31mThis script is made by %ESC%[92mhttps://vaaazgg.ddns.net/%ESC%[31
 echo  any circumstances without consent from the author. Distribution of the
 echo  script may lead to legal actions.]%ESC%[0m
 echo(
+echo welcome $USERNAME!
+echo(
 echo(
 echo(
 echo(
@@ -46,15 +48,19 @@ echo   #--------------------------------------------------------#
 echo   # 1. %ESC%[32mWrite a new txt file. 📜%ESC%[0m                            #
 echo   # 2. %ESC%[5m%ESC%[31mFormat a disk. (Dangerous..) 💀%ESC%[0m                     #
 echo   # 3. %ESC%[32mRules that you accept upon running this program. 🚫%ESC%[0m #
-echo   # 4. %ESC%[33mExit. ❌%ESC%[0m                                            #
+echo   # 4. %ESC%[32mDelete temporary files. 🧹%ESC%[0m                          #
+echo   # 5. %ESC%[32mDelete your chrome history ❌%ESC%[0m                       #
+echo   # 6. %ESC%[32mExit. 🚪%ESC%[0m                                            #
 echo   #--------------------------------------------------------#
 echo(
-set /p choice= Please enter your choice (1-4):
+set /p choice= Please enter your choice (1-6):
 
 if "%choice%"=="1" goto writefile
 if "%choice%"=="2" goto formatdisk
 if "%choice%"=="3" goto copyright
-if "%choice%"=="4" goto end
+if "%choice%"=="4" goto temp
+if "%choice%"=="5" goto chromehistory
+if "%choice%"=="6" goto end
 
 :writefile
 echo Writing to file...
@@ -103,7 +109,18 @@ echo(
 timeout /t 2 /nobreak >nul
 goto end
 
+:temp
+echo Deleting temporary files...
+del /q /f /s %TEMP%\* >nul 2>&1
+echo Temporary files deleted successfully!
+timeout /t 2 /nobreak >nul
+goto end
 
+:chromehistory
+echo Deleting Chrome history...
+rd /s /q "%LOCALAPPDATA%\Google\Chrome\User Data\Default\History"
+echo Chrome history deleted successfully!
+goto end
 
 
 
