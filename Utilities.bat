@@ -169,8 +169,6 @@ echo("💀>%ESC%[31m          `--------`%ESC%[0m          <💀"
 echo(
 echo %ESC%[91mGoodbye.
 echo(
-
-
 echo(
 echo %ESC%[5mPress any key to exit.%ESC%
 pause >nul
