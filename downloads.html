@@ -1,158 +1,345 @@
-<!DOCTYPE hmtl>
-	<html>
-		<head>
-			<meta charset="utf-8">
-			<title>VAAAZ | Applications</title>
-			<link rel="icon" href="https://media.discordapp.net/attachments/1423693073749381283/1437865118758207528/Senza_titolo_58_20251111200230.jpg?ex=6914cbbe&is=69137a3e&hm=f6d2fe9f34ca9c4d91a68380c9381bb9e41b9ec3851ac7822bebf91ee3ae77f6&=&format=png&width=922&height=922" type="image/x-icon">
-		</head>
-		
-		<style>
-			body {
-				background-image: url('https://images.unsplash.com/photo-1731569348001-e49c36947289?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170');
-				backdrop-filter: blur(5px);
-				-webkit-backdrop-filter: blur(5px);
-				
-				background-size: cover;
-				color: #000000;
-				font-family: Arial, sans-serif;
-				text-align: center;
-				margin-top: 50px;
-			}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://media.discordapp.net/attachments/1423693073749381283/1437865118758207528/Senza_titolo_58_20251111200230.jpg?ex=6914cbbe&is=69137a3e&hm=f6d2fe9f34ca9c4d91a68380c9381bb9e41b9ec3851ac7822bebf91ee3ae77f6&=&format=png&width=922&height=922" type="image/x-icon">
+    <title>VAAAZ | Downloads</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-			h1 {
-				color: #2ed803;
-				text-decoration: none;
-				font-size: 50px;
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+            color: #fff;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
 
-				-webkit-text-stroke: black 3px;
-			}
+        .hero {
+            min-height: 100vh;
+            background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), 
+                              url('https://images.unsplash.com/photo-1731569348001-e49c36947289?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
 
-			#underheader {
-				color: #2ed803;
-				text-decoration: none;
-				font-size: 25px;
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, #2ed803, #00ff88, #2ed803);
+            opacity: 0.15;
+            animation: pulse 4s ease-in-out infinite;
+        }
 
-				-webkit-text-stroke: black 1px;
-			}
+        @keyframes pulse {
+            0%, 100% { opacity: 0.15; transform: scale(1); }
+            50% { opacity: 0.25; transform: scale(1.05); }
+        }
 
+        .logo {
+            font-family: 'Orbitron', monospace;
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 900;
+            background: linear-gradient(45deg, #2ed803, #fff, #2ed803);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            animation: glow 2s ease-in-out infinite alternate;
+            z-index: 2;
+        }
 
-			#Back {
-				font-family:Arial, sans-serif, bold;
+        @keyframes glow {
+            from { filter: drop-shadow(0 0 20px rgba(46, 216, 3, 0.5)); }
+            to { filter: drop-shadow(0 0 30px rgba(46, 216, 3, 0.8)); }
+        }
 
+        .subtitle {
+            font-family: 'Orbitron', monospace;
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            letter-spacing: 3px;
+            z-index: 2;
+        }
 
+        .back-button {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            z-index: 100;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(46, 216, 3, 0.2);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(46, 216, 3, 0.5);
+            border-radius: 50px;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            animation: slideInLeft 1s ease-out;
+        }
 
-				background-color: greenyellow;
-				border-radius: 7px;
-				-webkit-text-stroke: rgb(255, 255, 255) .5px;
-				border-width: 5px;
-				border-style: inset;
-				border-color: greenyellow;
+        @keyframes slideInLeft {
+            from { transform: translateX(-100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
 
-				position: relative;
-				display: inline-block;
-				margin-top: -180px;
-				margin-left: 1750px;
-				color: #000000;
-				text-decoration: none;
-				font-size: 20px;
-			}
+        .back-button:hover {
+            background: linear-gradient(45deg, #2ed803, #90ee90);
+            transform: translateX(5px);
+            box-shadow: 0 10px 30px rgba(46, 216, 3, 0.4);
+        }
 
-			@keyframes myAnimation {
-  			from {background-color: greenyellow;}
-  			to {background-color: ghostwhite;}
-			}
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            z-index: 2;
+        }
 
-			@keyframes myAnimation2 {
-  			from {background-color: ghostwhite;}
-  			to {background-color: greenyellow;}
-			}
+        .intro-text {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+            opacity: 0.9;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
 
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-			#Back:hover {
-				background-color: ghostwhite;
-				animation-name: myAnimation;
-  				animation-duration: .3s;
-  				
-			}
+        .downloads-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
 
-			#Back:not(:hover) {
-				background-color: greenyellow;
-				animation-name: myAnimation2;
-				animation-duration: .3s;
+        .download-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 1s ease-out both;
+        }
 
-  				
-			}
+        .download-card:nth-child(2) { animation-delay: 0.2s; }
+        .download-card:nth-child(3) { animation-delay: 0.4s; }
 
-			#Latest {
-				font-family:Arial, sans-serif, bold;
-				background-color: whitesmoke;
-				border-radius: 7px;
-				-webkit-text-stroke: rgb(0, 0, 0) .5px;
-				border-width: 5px;
-				border-style: inset;
-				border-color: whitesmoke;
-				position: relative;
-				text-decoration: none;
+        .download-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s;
+        }
 
-			}
+        .download-card:hover::before {
+            left: 100%;
+        }
 
-			#Old1000 {
-				font-family:Arial, sans-serif, bold;
-				background-color: whitesmoke;
-				border-radius: 7px;
-				-webkit-text-stroke: rgb(0, 0, 0) .5px;
-				border-width: 5px;
-				border-style: inset;
-				border-color: whitesmoke;
-				position: relative;
-				text-decoration: none;
+        .download-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            background: rgba(46, 216, 3, 0.15);
+            border-color: rgba(46, 216, 3, 0.5);
+            box-shadow: 0 30px 60px rgba(46, 216, 3, 0.3);
+        }
 
-			}
+        .download-icon {
+            font-size: 4rem;
+            color: #2ed803;
+            margin-bottom: 1.5rem;
+        }
 
-			img {
-				width: 800px;
-				height: 400px;	
-			}
+        .download-card h3 {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #2ed803, #fff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-			#gif {
-				width: 200px;
-				height: 300px;	
-			}
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            width: 100%;
+            padding: 1.25rem 2rem;
+            background: linear-gradient(45deg, #2ed803, #90ee90);
+            border: none;
+            border-radius: 15px;
+            color: #000;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            margin-top: 1.5rem;
+        }
 
+        .download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(46, 216, 3, 0.5);
+            background: linear-gradient(45deg, #90ee90, #2ed803);
+        }
 
+        .images-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
 
+        .image-card {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+            animation: fadeInUp 1s ease-out both;
+        }
 
+        .image-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
 
+        .image-card:hover img {
+            transform: scale(1.1);
+        }
 
-		</style>
+        .image-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        }
 
+        #gif-card {
+            grid-column: 1 / -1;
+            justify-self: center;
+            max-width: 300px;
+        }
 
+        #gif-card img {
+            height: 400px;
+        }
 
-	<body>
-		<h1> WELCOME TO </h1>
-		<p id="underheader"> DOWNLOADS PAGE </p>
-		<a id="Back" href="index.html">HOME PAGE</a>
-		<br>
-		<p style="font-size: 30px; color: white; -webkit-text-stroke: black 1px;"> Here you can find all the available downloads for VAAAZ applications. Click the links below to download the latest versions of our software. </p>
-		<a id="Latest" href="Versions/UtilitiesLATEST.zip">DOWNLOAD LATEST VERSION</a>
-		<br>
-		<br>
-		<br>
-		<a id="Old1000" href="Versions/UtilitiesLITE.zip">DOWNLOAD VERSION LITE</a>
-		<br>
-		<br>
-		<br>
-		<a id="Old1000" href="Versions/UtilityLNGPACK.zip">DOWNLOAD LANGUAGE PACK</a>
-		<br>
-		<br>
-		<img src="https://i.imgur.com/5wq4pFb.png"></img> <img src="https://i.imgur.com/7fkpJKE.png"></img>
-		<br>
-		<br>
-		<img id="gif" src="man.gif">
-	</body>
-	
-</html
+        @media (max-width: 768px) {
+            .hero {
+                background-attachment: scroll;
+            }
+            
+            .back-button {
+                top: 1rem;
+                left: 1rem;
+                padding: 0.6rem 1.2rem;
+                font-size: 0.9rem;
+            }
+            
+            .content {
+                padding: 2rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i>
+            Home
+        </a>
+        <div class="logo">VAAAZ</div>
+        <p class="subtitle">DOWNLOADS</p>
+    </section>
 
+    <section class="content">
+        <p class="intro-text">
+            Here you can find all the available downloads for VAAAZ applications. 
+            Click the links below to download the latest versions of our software.
+        </p>
 
+        <div class="downloads-grid">
+            <div class="download-card">
+                <div class="download-icon">
+                    <i class="fas fa-download"></i>
+                </div>
+                <h3>Latest Version</h3>
+                <a href="Versions/UtilitiesLATEST.zip" class="download-btn">
+                    <i class="fas fa-file-zipper"></i>
+                    Download Latest
+                </a>
+            </div>
 
+            <div class="download-card">
+                <div class="download-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>Version Lite</h3>
+                <a href="Versions/UtilitiesLITE.zip" class="download-btn">
+                    <i class="fas fa-file-zipper"></i>
+                    Download Lite
+                </a>
+            </div>
 
+            <div class="download-card">
+                <div class="download-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3>Language Pack</h3>
+                <a href="Versions/UtilityLNGPACK.zip" class="download-btn">
+                    <i class="fas fa-language"></i>
+                    Download Languages
+                </a>
+            </div>
+        </div>
+
+        <div class="images-section">
+            <div class="image-card">
+                <img src="https://i.imgur.com/5wq4pFb.png" alt="VAAAZ App 1">
+            </div>
+            <div class="image-card">
+                <img src="https://i.imgur.com/7fkpJKE.png" alt="VAAAZ App 2">
+            </div>
+            <div class="image-card" id="gif-card">
+                <img src="man.gif" alt="VAAAZ Animation">
+            </div>
+        </div>
+    </section>
+</body>
+</html>
