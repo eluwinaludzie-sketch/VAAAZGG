@@ -1,104 +1,187 @@
-<!DOCTYPE hmtl>
-	<html>
-		<head>
-			<meta charset="utf-8">
-			 <link rel="icon" href="https://media.discordapp.net/attachments/1423693073749381283/1437865118758207528/Senza_titolo_58_20251111200230.jpg?ex=6914cbbe&is=69137a3e&hm=f6d2fe9f34ca9c4d91a68380c9381bb9e41b9ec3851ac7822bebf91ee3ae77f6&=&format=png&width=922&height=922" type="image/x-icon">
-			<title>VAAAZ | Home page</title>
-		</head>
-		
-		<style>
-			body {
-				background-image: url('https://images.unsplash.com/photo-1699891730676-037bed3c1bed?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1332');
-				background-size: cover;
-				color: #000000;
-				font-family: Arial, sans-serif;
-				text-align: center;
-				margin-top: 50px;
-			}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://media.discordapp.net/attachments/1423693073749381283/1437865118758207528/Senza_titolo_58_20251111200230.jpg?ex=6914cbbe&is=69137a3e&hm=f6d2fe9f34ca9c4d91a68380c9381bb9e41b9ec3851ac7822bebf91ee3ae77f6&=&format=png&width=922&height=922" type="image/x-icon">
+    <title>VAAAZ | Home Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-			h1 {
-				color: #2ed803;
-				text-decoration: none;
-				font-size: 50px;
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+            color: #fff;
+        }
 
-				-webkit-text-stroke: black 3px;
-			}
+        .hero {
+            min-height: 100vh;
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), 
+                              url('https://images.unsplash.com/photo-1699891730676-037bed3c1bed?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1332');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
 
-			#underheader {
-				color: #2ed803;
-				text-decoration: none;
-				font-size: 25px;
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, #2ed803, #00ff88, #2ed803);
+            opacity: 0.1;
+            animation: shimmer 6s ease-in-out infinite;
+        }
 
-				-webkit-text-stroke: black 1px;
-			}
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.1; transform: translateX(-100%); }
+            50% { opacity: 0.2; transform: translateX(100%); }
+        }
 
+        .logo {
+            font-family: 'Orbitron', monospace;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            background: linear-gradient(45deg, #2ed803, #fff, #2ed803);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 30px rgba(46, 216, 3, 0.5);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
 
-			a {
-				font-family:Arial, sans-serif, bold;
+        @keyframes glow {
+            from { text-shadow: 0 0 20px rgba(46, 216, 3, 0.5), 0 0 30px rgba(46, 216, 3, 0.3); }
+            to { text-shadow: 0 0 30px rgba(46, 216, 3, 0.8), 0 0 40px rgba(46, 216, 3, 0.5); }
+        }
 
+        .subtitle {
+            font-family: 'Orbitron', monospace;
+            font-size: clamp(1.2rem, 4vw, 2rem);
+            font-weight: 400;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            letter-spacing: 2px;
+        }
 
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 3rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #000;
+            background: linear-gradient(45deg, #2ed803, #90ee90);
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(46, 216, 3, 0.4);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
 
-				background-color: greenyellow;
-				border-radius: 7px;
-				-webkit-text-stroke: rgb(255, 255, 255) .5px;
-				border-width: 5px;
-				border-style: inset;
-				border-color: greenyellow;
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
+        }
 
-				position: relative;
-				display: inline-block;
-				margin-top: -180px;
-				margin-left: 1750px;
-				color: #000000;
-				text-decoration: none;
-				font-size: 20px;
-			}
+        .cta-button:hover::before {
+            left: 100%;
+        }
 
-			@keyframes myAnimation {
-  			from {background-color: greenyellow;}
-  			to {background-color: ghostwhite;}
-			}
+        .cta-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(46, 216, 3, 0.6);
+            background: linear-gradient(45deg, #90ee90, #2ed803);
+        }
 
-			@keyframes myAnimation2 {
-  			from {background-color: ghostwhite;}
-  			to {background-color: greenyellow;}
-			}
+        .cta-button:active {
+            transform: translateY(-2px) scale(1.02);
+        }
 
+        .feature-image {
+            margin-top: 4rem;
+            max-width: 400px;
+            width: 90%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            animation: float 6s ease-in-out infinite;
+        }
 
-			a:hover {
-				background-color: ghostwhite;
-				animation-name: myAnimation;
-  				animation-duration: .3s;
-  				
-			}
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
 
-			a:not(:hover) {
-				background-color: greenyellow;
-				animation-name: myAnimation2;
-				animation-duration: .3s;
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero {
+                background-attachment: scroll;
+            }
+            
+            .cta-button {
+                padding: 1rem 2.5rem;
+                font-size: 1.1rem;
+            }
+        }
 
-  				
-			}
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            animation: bounce 2s infinite;
+        }
 
-			
+        .scroll-indicator i {
+            font-size: 1.5rem;
+            opacity: 0.7;
+        }
 
-
-		</style>
-
-
-
-	<body>
-		<h1> WELCOME TO </h1>
-		<p id="underheader"> VAAAZGG.DDNS.NET </p>
-		<a href="downloads.html">DOWNLOADS</a>
-
-		
-		<img src="https://i.imgur.com/5wq4pFb.png"></img>
-	</body>
-	
-
-</html
-
-
-
-
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="logo">VAAAZ</div>
+        <p class="subtitle">vaaazgg.ddns.net</p>
+        <a href="downloads.html" class="cta-button">
+            <i class="fas fa-download"></i>
+            Explore Downloads
+        </a>
+        <img src="https://i.imgur.com/5wq4pFb.png" alt="VAAAZ Feature" class="feature-image">
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+</body>
+</html>
